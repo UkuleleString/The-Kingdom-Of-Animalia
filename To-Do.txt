@@ -1,0 +1,8 @@
+use dictionaries as ability and item inventories
+use functions to make start screen
+use functions to make pause screen (?)
+use classes to create functions for actions
+	- Use cmd module to create over arching commands
+	- 2 & 3
+
+plot: You must help the King of the Humans and the King of the Animals 
