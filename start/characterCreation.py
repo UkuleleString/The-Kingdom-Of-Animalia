@@ -1,6 +1,6 @@
-
 import time
 import random
+
 
 class characterCreation():
     def __init__(self):
@@ -86,6 +86,7 @@ class characterCreation():
                     else:
                         pass
                 # Point Selecting
+                ptSelection = False
                 while True:
                     print()
                     print()
@@ -113,20 +114,19 @@ class characterCreation():
                     print()
                     while True:
                         if statChange in ["Strength", "STRENGTH", "strength"]:
-                            print()
+                            pass
                         elif statChange in ["Dexterity", "DEXTERITY", "dexterity"]:
-                            print()
+                            pass
                         elif statChange in ["Constitution", "CONSTITUTION", "consitution"]:
-                            print()
+                            pass
                         elif statChange in ["Wisdom", "WISDOM", "wisdom"]:
-                            print()
+                            pass
                         elif statChange in ["Intelligence", "INTELLIGENCE", "intelligence"]:
-                            print()
+                            pass
                         elif statChange in ["Charisma", "CHARISMA", "charisma"]:
-                            print()
+                            pass
                         else:
-                            print()
-                pass
+                            pass
                 break
 ########################################################################################
 ############     Invalid Inputs     ####################################################
@@ -135,4 +135,3 @@ class characterCreation():
                 print("Enter a Correct Value Asshole")
                 print()
                 time.sleep(1)
-                pass

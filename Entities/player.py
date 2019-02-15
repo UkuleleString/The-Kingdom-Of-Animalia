@@ -41,8 +41,6 @@ class player():
                     if nameConfirmation in ["Y", "y", "YES", "yes", "Yes"]:
                         self.name = name
                         break
-                    else:
-                        pass
                 print()
                 time.sleep(1)
                 self.strength = random.randint(1, 7)
@@ -83,8 +81,6 @@ class player():
                     if nameConfirmation in ["Y", "y", "YES", "yes", "Yes"]:
                         self.name = name
                         break
-                    else:
-                        pass
                 while True:
                     print()
                     time.sleep(1)
