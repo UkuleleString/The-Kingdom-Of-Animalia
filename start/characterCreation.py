@@ -3,6 +3,7 @@ import random
 
 
 class characterCreation():
+    """Creating player statistics"""
     def __init__(self):
         print()
         print("*********************")
@@ -70,7 +71,7 @@ class characterCreation():
                 self.wisdom = 0
                 self.charisma = 0
                 self.bag = {}
-                # Name Creation
+                #Name Selecting
                 while True:
                     print("Enter Your Name!")
                     name = input()
