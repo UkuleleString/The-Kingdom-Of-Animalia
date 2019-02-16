@@ -1,10 +1,87 @@
 import time
 import random
 
+############################################################
+############         Creation Class         ################
+############################################################
+
 
 class characterCreation():
-    """Creating player statistics"""
     def __init__(self):
+        """Creating player statistics"""
+    ############################################
+    ####   Commands just to clean up code   ####
+    ############################################
+        def nameSelection():
+            """Lets player select name"""
+            while True:
+                print("Enter Your Name!")
+                name = input()
+                print()
+                time.sleep(1)
+                print("Are you sure, " + name + "?")
+                print("Enter 'Y' to confirm, anything else to input a different name")
+                print()
+                nameConfirmation = input()
+                if nameConfirmation in ["Y", "y", "YES", "yes", "Yes"]:
+                    return name
+                    break
+
+        def printStats():
+            """Prints adjusted stat total"""
+            time.sleep(1)
+            print()
+            print()
+            print("Your strength stat is: ", self.strength)
+            print("Your dexterity stat is: ", self.dexterity)
+            print("Your constitution stat is: ", self.constitution)
+            print("Your wisdom stat is: ", self.wisdom)
+            print("Your intelligence stat is: ", self.intelligence)
+            print("Your charisma stat is: ", self.charisma)
+            print()
+
+        def statChange(stat, amount):
+            if stat in ["Strength", "strength", "STRENGTH"]:
+                self.strength += amount
+            elif stat in ["Dexterity", "dexterity", "DEXTERITY"]:
+                self.dexterity += amount
+            elif stat in ["Constitution", "constitution", "CONSTITUTION"]:
+                self.constitution += amount
+            elif stat in ["Wisdom", "wisdom", "WISDOM"]:
+                self.wisdom += amount
+            elif stat in ["Intelliegence", "intelligence", "INTELLIGENCE"]:
+                self.intelligence += amount
+            elif stat in ["Charisma", "charisma", "CHARISMA"]:
+                self.charisma += amount
+
+        def statSelection():
+            """Let's player choose stat totals"""
+            startGame = True
+            startPts = 0
+            maxPoints = 21
+            while True:
+                if startGame is True:
+                    print("To add, just type a number.")
+                    print("Ex: 5")
+                    print("To subtract, type a negative number")
+                    print("Ex: -5")
+                    startGame = False
+                    print()
+                    print()
+                stat = input("Which stat do you want to change? ")
+                print()
+                print()
+                printStats()
+                print()
+                print()
+                time.sleep(1)
+
+
+
+    #####################################
+    ####        Actual  class        ####
+    #####################################
+
         print()
         print("*********************")
         print("*Character Creation!*")
@@ -29,20 +106,7 @@ class characterCreation():
 ############               Random Point Value Choice              ######################
 ########################################################################################
             if pointStyle in ["Randomly", "randomly", "RANDOMLY"]:
-                while True:
-                    print("Enter Your Name!")
-                    name = input()
-                    print()
-                    time.sleep(1)
-                    print("Are you sure, " + name + "?")
-                    print("Enter 'Y' to confirm, anything else to input a different name")
-                    print()
-                    nameConfirmation = input()
-                    if nameConfirmation in ["Y", "y", "YES", "yes", "Yes"]:
-                        self.name = name
-                        break
-                    else:
-                        pass
+                self.name = nameSelection()
                 print()
                 time.sleep(1)
                 self.strength = random.randint(1, 7)
@@ -71,63 +135,8 @@ class characterCreation():
                 self.wisdom = 0
                 self.charisma = 0
                 self.bag = {}
-                #Name Selecting
-                while True:
-                    print("Enter Your Name!")
-                    name = input()
-                    print()
-                    time.sleep(1)
-                    print("Are you sure, " + name + "?")
-                    print("Enter 'Y' to confirm, anything else to input a different name")
-                    print()
-                    nameConfirmation = input()
-                    if nameConfirmation in ["Y", "y", "YES", "yes", "Yes"]:
-                        self.name = name
-                        break
-                    else:
-                        pass
-                # Point Selecting
-                ptSelection = False
-                while True:
-                    print()
-                    print()
-                    time.sleep(1)
-                    print()
-                    print("Your strength stat is: ", self.strength)
-                    print("Your dexterity stat is: ", self.dexterity)
-                    print("Your constitution stat is: ", self.constitution)
-                    print("Your wisdom stat is: ", self.wisdom)
-                    print("Your intelligence stat is: ", self.intelligence)
-                    print("Your charisma stat is: ", self.charisma)
-                    print()
-                    if ptSelection is False:
-                        print("Hello, " + self.name + "!")
-                        ptSelection is True
-                        break
-                    else:
-                        pass
-                    print()
-                    print()
-                    print()
-                    time.sleep(1)
-                    startPts = 0
-                    statChange = input("Which stat do you want to change? ")
-                    print()
-                    while True:
-                        if statChange in ["Strength", "STRENGTH", "strength"]:
-                            pass
-                        elif statChange in ["Dexterity", "DEXTERITY", "dexterity"]:
-                            pass
-                        elif statChange in ["Constitution", "CONSTITUTION", "consitution"]:
-                            pass
-                        elif statChange in ["Wisdom", "WISDOM", "wisdom"]:
-                            pass
-                        elif statChange in ["Intelligence", "INTELLIGENCE", "intelligence"]:
-                            pass
-                        elif statChange in ["Charisma", "CHARISMA", "charisma"]:
-                            pass
-                        else:
-                            pass
+                self.name = nameSelection()
+                statSelection()
                 break
 ########################################################################################
 ############     Invalid Inputs     ####################################################
