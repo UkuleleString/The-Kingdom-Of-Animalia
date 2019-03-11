@@ -1,17 +1,21 @@
 import time
-import cmd
-import json
-import textwrap
 import random
 
 class melee():
-    pass
+    '''Gives "Melee" damage type'''
+    def __init__(self):
+        pass
 
 class magic():
-    pass
-
+    '''Gives "magic" damage type'''
+    def __init__(self):
+        pass
 class healing():
-    pass
+    '''Allows the ability to heal'''
+    def __init__(self):
+        pass
 
 class utility():
-    pass
+    '''Allows for external ability usage'''
+    def __init__(self):
+        pass

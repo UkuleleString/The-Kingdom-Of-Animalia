@@ -1,0 +1,56 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/45968eff/
+Agartha	../The Kingdom of Animalia.py	/^class Agartha(world):$/;"	kind:class	line:28
+Eden	../The Kingdom of Animalia.py	/^class Eden(world):$/;"	kind:class	line:15
+Ent	../The Kingdom of Animalia.py	/^import Entities as Ent$/;"	kind:namespace	line:1
+Midgard	../The Kingdom of Animalia.py	/^class Midgard(world):$/;"	kind:class	line:21
+The Kingdom of Animalia.py	../The Kingdom of Animalia.py	1;"	kind:file	line:1
+__init__	../Entities/abilities.py	/^    def __init__(self):$/;"	kind:member	line:11
+__init__	../Entities/abilities.py	/^    def __init__(self):$/;"	kind:member	line:15
+__init__	../Entities/abilities.py	/^    def __init__(self):$/;"	kind:member	line:20
+__init__	../Entities/abilities.py	/^    def __init__(self):$/;"	kind:member	line:6
+__init__	../Entities/enemy.py	/^    def __init__(self,name,strength,dexterity,constitution,wisdom,intelligence,charisma):$/;"	kind:member	line:3
+__init__	../Entities/items.py	/^    def __init__(self, iD, name):$/;"	kind:member	line:3
+__init__	../Entities/player.py	/^    def __init__(self):$/;"	kind:member	line:106
+__init__	../The Kingdom of Animalia.py	/^    def __init__(self):$/;"	kind:member	line:31
+__init__	../The Kingdom of Animalia.py	/^    def __init__(self, lG, bL):$/;"	kind:member	line:11
+__init__	../The Kingdom of Animalia.py	/^    def __init__(self, lG, bL):$/;"	kind:member	line:17
+__init__	../The Kingdom of Animalia.py	/^    def __init__(self, lG, bL):$/;"	kind:member	line:24
+__init__	../start/startScreen.py	/^    def __init__(self):$/;"	kind:member	line:5
+__init__.py	../Entities/__init__.py	1;"	kind:file	line:1
+__init__.py	../start/__init__.py	1;"	kind:file	line:1
+abilities.py	../Entities/abilities.py	1;"	kind:file	line:1
+action	../Entities/__init__.py	/^import Entities.abilities as action$/;"	kind:namespace	line:6
+begin	../The Kingdom of Animalia.py	/^begin = start.startScreen.startScreen()$/;"	kind:variable	line:5
+currentWorld	../The Kingdom of Animalia.py	/^currentWorld = Midgard()$/;"	kind:variable	line:35
+enemy	../Entities/__init__.py	/^import Entities.enemy as enemy$/;"	kind:namespace	line:4
+enemy	../Entities/enemy.py	/^class enemy(object):$/;"	kind:class	line:1
+enemy.py	../Entities/enemy.py	1;"	kind:file	line:1
+healing	../Entities/abilities.py	/^class healing():$/;"	kind:class	line:13
+inventory	../Entities/player.py	/^class inventory(object):$/;"	kind:class	line:162
+item	../Entities/__init__.py	/^import Entities.items as item/;"	kind:namespace	line:8
+item	../Entities/items.py	/^class item(object):$/;"	kind:class	line:1
+itemDict	../Entities/itemDictionary.py	/^itemDict = {}/;"	kind:variable	line:1
+itemDictionary.py	../Entities/itemDictionary.py	1;"	kind:file	line:1
+items.py	../Entities/items.py	1;"	kind:file	line:1
+magic	../Entities/abilities.py	/^class magic():$/;"	kind:class	line:9
+melee	../Entities/abilities.py	/^class melee():$/;"	kind:class	line:4
+nameSelection	../Entities/player.py	/^def nameSelection():$/;"	kind:function	line:15
+p1	../The Kingdom of Animalia.py	/^p1 = Ent.player.player()$/;"	kind:variable	line:6
+player	../Entities/__init__.py	/^import Entities.player as player$/;"	kind:namespace	line:2
+player	../Entities/player.py	/^class player():$/;"	kind:class	line:101
+player.py	../Entities/player.py	1;"	kind:file	line:1
+printStats	../Entities/player.py	/^def printStats():$/;"	kind:function	line:30
+startScreen	../start/startScreen.py	/^class startScreen():$/;"	kind:class	line:3
+startScreen.py	../start/startScreen.py	1;"	kind:file	line:1
+statChange	../Entities/player.py	/^def statChange(stat, amount):$/;"	kind:function	line:42
+statList	../Entities/player.py	/^statList = ["Strength", "strength", "STRENGTH",$/;"	kind:variable	line:4
+statSelection	../Entities/player.py	/^def statSelection():$/;"	kind:function	line:57
+utility	../Entities/abilities.py	/^class utility():$/;"	kind:class	line:18
+weapon	../Entities/items.py	/^class weapon(item):$/;"	kind:class	line:7
+world	../The Kingdom of Animalia.py	/^class world(): $/;"	kind:class	line:8

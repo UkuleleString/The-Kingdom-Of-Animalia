@@ -1,5 +1,5 @@
-class enemy:
-    #Determines Enemy Behaviours
+class enemy(object):
+    '''Determines Enemy Behaviours and Stats'''
     def __init__(self,name,strength,dexterity,constitution,wisdom,intelligence,charisma):
         self.name = name
         self.strength = strength
