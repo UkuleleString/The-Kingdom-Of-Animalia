@@ -174,7 +174,3 @@ and sets the name
                 print()
                 time.sleep(5)
                 os.system('clear')
-
-
-class inventory(object):
-    pass

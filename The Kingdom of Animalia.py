@@ -17,7 +17,7 @@ while True:
     print()
     print("Please enter one:")
     print()
-    viewScreen = (input())
+    viewScreen = input()
     if viewScreen.lower() == "start":
         os.system('clear')
         break
@@ -35,7 +35,6 @@ while True:
         time.sleep(5)
         os.system('clear')
         pass
-
 
 """   Start Screen    """
 p1 = Ent.player.player()
@@ -76,7 +75,16 @@ theory'''
         super().__init__(6, 12)
         self.worldName = "Agartha"
 
-currentWorld = Midgard()
 
-if currentWorld.worldName == "Midgard":
-    print("You are located in: " + currentWorld.worldName)
+currentWorld = Midgard()
+while True:
+    print("You have moved to " + currentWorld.worldName)
+
+    while currentWorld.worldName == "Midgard":
+        pass
+
+    while currentWorld.worldName == "Eden":
+        pass
+
+    while currentWorld.worldName == "Agartha":
+        pass
