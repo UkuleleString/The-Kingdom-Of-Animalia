@@ -30,8 +30,7 @@ while True:
         os.system('clear')
         pass
     else:
-        print(
-            "Bitch, this is the fucking title screen. How the fuck you fuckin up already.")
+        print("Bitch, this is the fucking title screen. How the fuck you fuckin up already.")
         time.sleep(5)
         os.system('clear')
         pass
