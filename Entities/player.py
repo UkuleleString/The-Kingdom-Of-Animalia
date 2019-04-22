@@ -131,7 +131,7 @@ and sets the name
             print()
             pointStyle = input()
             print()
-            if pointStyle in ["Randomly", "randomly", "RANDOMLY"]:
+            if pointStyle.lower() == "randomly":
                 os.system('clear')
                 self.name = nameSelection()
                 print()
@@ -151,7 +151,7 @@ and sets the name
                 self.printStats()
                 time.sleep(5)
                 break
-            elif pointStyle in ["Set", "set", "SET"]:
+            elif pointStyle.lower() == "set":
                 os.system('clear')
                 self.strength = 0
                 self.dexterity = 0
