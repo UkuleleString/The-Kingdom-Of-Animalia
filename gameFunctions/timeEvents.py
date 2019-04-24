@@ -2,6 +2,9 @@ class timer(object):
     """Creates timer to return values based on
 what period of the day it is"""
 
+    self.hours = 0
+    self.minutes = 0
+
     def __init__(self):
         self.minutes = 15
 
