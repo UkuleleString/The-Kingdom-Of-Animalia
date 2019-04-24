@@ -16,13 +16,11 @@ statList = ["Strength", "strength", "STRENGTH",
 def nameSelection():
     """Lets player select name"""
     while True:
-        print("Enter Your Name!")
+        print("\nEnter Your Name!")
         name = input()
-        print()
         time.sleep(0.5)
-        print("Are you sure, " + name + "?")
-        print("Enter 'Y' to confirm, anything else to input a different name")
-        print()
+        print("\nAre you sure, " + name + "?")
+        print("Enter 'Y' to confirm, anything else to input a different name\n")
         nameConfirmation = input()
         if nameConfirmation in ["Y", "y", "YES", "yes", "Yes"]:
             return name
@@ -38,12 +36,14 @@ and sets the name
     def printStats(self):
         """Prints adjusted stat total"""
         time.sleep(0.5)
+        print("**************************************************")
         print("Your strength (str) stat is:       ", self.strength)
         print("Your dexterity (dex) stat is:      ", self.dexterity)
         print("Your constitution (con) stat is:   ", self.constitution)
         print("Your wisdom (wis) stat is:         ", self.wisdom)
         print("Your intelligence (int) stat is:   ", self.intelligence)
         print("Your charisma (cha) stat is:       ", self.charisma)
+        print("**************************************************\n")
 
     def statChange(self, stat, amount):
         '''Adds stat changes'''
@@ -67,12 +67,10 @@ and sets the name
         print("To add, just type a number.")
         print("Ex: 5")
         print("To subtract, type a negative number.")
-        print("Ex: -5")
-        print()
+        print("Ex: -5\n")
         while True:
             time.sleep(0.5)
             self.printStats()
-            print()
             time.sleep(0.5)
             if usablePoints == 0:
                 print("Are you okay with your stats?")
@@ -83,25 +81,23 @@ and sets the name
                 print("You have ", usablePoints, " usable points")
             print("Which stat do you want to change?")
             stat = input()
-            print()
             if stat not in statList:
-                print("Choose an actual stat, asshole.")
+                print("\nChoose an actual stat, asshole.")
                 time.sleep(1)
                 os.system('clear')
                 continue
             print("How much do you want to change it?")
             amount = input()
-            print()
             if(amount.isdigit):
                 amount = int(amount)
             else:
-                print("Enter a number, dumbass.")
+                print("\nEnter a number, dumbass.")
                 continue
             if(usablePoints - amount < 0):
-                print("Don't try to use points you don't have.")
+                print("\nDon't try to use points you don't have.")
                 continue
             elif(usablePoints - amount > maxPoints):
-                print("Don't try to get back points you don't have.")
+                print("\nDon't try to get back points you don't have.")
                 continue
             self.statChange(stat, amount)
             usablePoints -= amount
@@ -110,31 +106,24 @@ and sets the name
 
     def __init__(self):
         """Creating player statistics"""
-        print()
-        print("*********************")
+        print("\n*********************")
         print("*Character Creation!*")
-        print("*********************")
+        print("*********************\n")
         time.sleep(0.5)
-        print()
         print("Randomly Rolled: All stats will be given random values between 1 and 7")
         print("Pros: Potentially High Stats")
-        print("Cons: Potentially Low Stats")
-        print()
+        print("Cons: Potentially Low Stats\n")
         time.sleep(0.5)
         print("Set point: You're given 21 points to divide between all Stats")
         print("Pros: Fair point values")
-        print("Cons: No especially high stats without downsides.")
-        print()
+        print("Cons: No especially high stats without downsides.\n")
         time.sleep(0.5)
         while True:
-            print("Choose One: 'Randomly' or 'Set' ")
-            print()
+            print("Choose One: 'Randomly' or 'Set'\n")
             pointStyle = input()
-            print()
-            if pointStyle.lower() == "randomly":
+            if pointStyle.lower() in ["randomly", "random", "rand"]:
                 os.system('clear')
                 self.name = nameSelection()
-                print()
                 time.sleep(0.5)
                 os.system('clear')
                 self.strength = random.randint(1, 7)
@@ -171,6 +160,5 @@ and sets the name
                 break
             else:
                 print("Enter a Correct Value, Asshole")
-                print()
                 time.sleep(5)
                 os.system('clear')
