@@ -16,7 +16,7 @@ statList = ["Strength", "strength", "STRENGTH",
 def nameSelection():
     """Lets player select name"""
     while True:
-        print("\nEnter Your Name!")
+        print("Enter Your Name!")
         name = input()
         time.sleep(0.5)
         print("\nAre you sure, " + name + "?")
@@ -35,7 +35,6 @@ and sets the name
 
     def printStats(self):
         """Prints adjusted stat total"""
-        time.sleep(0.5)
         print("**************************************************")
         print("Your strength (str) stat is:       ", self.strength)
         print("Your dexterity (dex) stat is:      ", self.dexterity)
@@ -64,14 +63,13 @@ and sets the name
         """Let's player choose stat totals"""
         maxPoints = 21
         usablePoints = 21
+        usedPoints = 0
         print("To add, just type a number.")
         print("Ex: 5")
         print("To subtract, type a negative number.")
         print("Ex: -5\n")
         while True:
-            time.sleep(0.5)
             self.printStats()
-            time.sleep(0.5)
             if usablePoints == 0:
                 print("Are you okay with your stats?")
                 confirmation = input()
@@ -79,6 +77,7 @@ and sets the name
                     break
             else:
                 print("You have ", usablePoints, " usable points")
+                print("You have used ", usedPoints, " points\n")
             print("Which stat do you want to change?")
             stat = input()
             if stat not in statList:
@@ -86,27 +85,42 @@ and sets the name
                 time.sleep(1)
                 os.system('clear')
                 continue
-            print("How much do you want to change it?")
-            amount = input()
-            if(amount.isdigit):
-                amount = int(amount)
-            else:
-                print("\nEnter a number, dumbass.")
-                continue
-            if(usablePoints - amount < 0):
+            print("\nHow much do you want to change it?")
+            amountStr = input()
+            amount = ''
+            negativeNum = False
+            for character in amountStr:
+                if character == "-":
+                    negativeNum = True
+                elif character.isdigit:
+                    amount = str(amount) + character
+                else:
+                    os.system('clear')
+                    print("\nEnter a number, dumbass.")
+                    continue
+            amount = int(amount)
+            if negativeNum is True:
+                amount = 0 - amount
+            usablePoints -= amount
+            usedPoints += amount
+            if(usablePoints < 0):
+                os.system('clear')
                 print("\nDon't try to use points you don't have.")
+                usablePoints += amount
+                usedPoints -= amount
                 continue
-            elif(usablePoints - amount > maxPoints):
+            elif(usedPoints > maxPoints):
+                os.system('clear')
                 print("\nDon't try to get back points you don't have.")
+                usablePoints += amount
+                usedPoints -= amount
                 continue
             self.statChange(stat, amount)
-            usablePoints -= amount
-            time.sleep(0.8)
             os.system('clear')
 
     def __init__(self):
         """Creating player statistics"""
-        print("\n*********************")
+        print("*********************")
         print("*Character Creation!*")
         print("*********************\n")
         time.sleep(0.5)
@@ -153,12 +167,14 @@ and sets the name
                 self.level = 1
                 self.exp = 0
                 self.name = nameSelection()
-                time.sleep(2)
                 os.system('clear')
                 self.statSelection()
-                time.sleep(5)
+                time.sleep(1)
                 break
             else:
                 print("Enter a Correct Value, Asshole")
                 time.sleep(5)
                 os.system('clear')
+
+if __name__ == "__main__":
+    p1 = player()
