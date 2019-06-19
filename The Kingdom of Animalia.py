@@ -1,9 +1,13 @@
-import Entities as Ent
+from entities.player import player
+from entities.items import itemDict
+import entities.items as items
+from gameFunctions.worlds import worlds
+from quests import boxOfQuests
+from quests import randQuest
 import time
 import os
 import pickle
-import textwrap
-import gameFunctions as game
+
 
 os.system('clear')
 while True:
@@ -20,7 +24,7 @@ while True:
 
     if viewScreen.lower() == "start":
         os.system('clear')
-        p1 = Ent.player.player()
+        p1 = player()
         os.system('clear')
         break
 
@@ -31,44 +35,41 @@ while True:
 
     elif viewScreen.lower() == "load":
         os.system('clear')
-        with open('playerData.pkl', 'rb') as playerData:
-            p1 = pickle.load(playerData)
-        with open('worldData.pkl', 'rb') as worldData:
-            currentWorld = pickle.load(worldData)
-        with open('questData.pkl', 'rb') as questData:
-            questCompletion = pickle.load(questData)
+        with open("saveGame.pkl", 'rb') as saveGame:
+            p1, currentWorld, questCompletion = pickle.load(saveGame)
         print("Welcome back, " + p1.name + "!")
         p1.printStats()
         time.sleep(5)
         break
 
     else:
-        print("""Bitch, this is the fucking title screen. 
+        print("""Bitch, this is the fucking title screen.
 How the fuck you fuckin up already.""")
         time.sleep(5)
         os.system('clear')
         pass
 
-"""   Starting the Game   """
-os.system('clear')
+# Game Worlds
 
 
 # Starts player in Midgard
 # Sets all quests as uncomplete
 
 if viewScreen.lower() == 'start':
-    currentWorld = game.worlds.Midgard()
+    os.system('clear')
+    currentWorld = worlds["midgard"]
     questCompletion = [0]
 
 
 #### Game Loop ####
 while True:
-    print("You have moved to " + currentWorld.worldName)
+    print("You have moved to " + currentWorld["worldName"])
     print("Feel free to 'look' around!")
-    print("******************" + ("*" * len(currentWorld.worldName)))
+    print("***************************" +
+          ("*" * len(currentWorld["worldName"])))
 
-# Midgard
-    while currentWorld.worldName == "Midgard":
+### Midgard ###
+    while currentWorld["worldName"] == "Midgard":
         print("What would you like to do?")
         playerAction = input()
         if playerAction.lower() == "look":
@@ -83,6 +84,7 @@ while True:
 
         elif playerAction.lower() == "tavern":
             os.system('clear')
+
             pass
 
         elif playerAction.lower() == "dungeon":
@@ -99,20 +101,17 @@ while True:
             print("Where would you like to go?")
             transferWorld = input()
 
-            if transferWorld.lower() == 'eden' and p1.level >= game.worlds.Eden.levelGate:
-                print(game.worlds.Eden.transferText)
-                print("*" * len(game.worlds.Eden.transferText))
-                currentWorld = game.worlds.Eden()
+            if transferWorld.lower() == 'eden' and p1.level >= worlds["eden"]["levelGate"]:
+                for i in worlds["eden"]["transferText"]:
+                    print(i)
+                print("*" * len(worlds["eden"]["transferText"][1]))
+                currentWorld = worlds["eden"]
                 break
 
         elif playerAction.lower() == "save":
             os.system('clear')
-            with open('playerData.pkl', 'wb') as playerData:
-                pickle.dump(p1, playerData)
-            with open('worldData.pkl', 'wb') as worldData:
-                pickle.dump(currentWorld, worldData)
-            with open('questData.pkl', 'wb') as questData:
-                pickle.dump(questCompletion, questData)
+            with open('saveGame.pkl', 'wb') as saveGame:
+                pickle.dump([p1, currentWorld, questCompletion], saveGame)
             print('Game Saved!')
 
         else:
@@ -120,12 +119,11 @@ while True:
             print("You kinda just sit there for a while and")
             print("contemplate why you're still alive")
             print("after thinking something so incredibly stupid")
-            time.sleep(2)
             print('\n***************************************************\n')
 
 
-# Eden
-    while currentWorld.worldName == "Eden":
+### Eden ###
+    while currentWorld["worldName"] == "Eden":
         print("What would you like to do?")
         playerAction = input()
         if playerAction.lower() == "look":
@@ -156,10 +154,10 @@ while True:
             print("Where would you like to go?")
             transferWorld = input()
 
-            if transferWorld.lower() == 'Midgard' & p1.level >= game.worlds.Midgard.levelGate:
-                print(game.worlds.Midgard.transferText)
-                print("*" * len(game.worlds.Midgard.transferText))
-                currentWorld = game.worlds.Midgard()
+            if transferWorld.lower() == 'midgard' & p1.level >= worlds["midgard"]["levelGate"]:
+                print(worlds["midgard"]["transferText"])
+                print("*" * len(worlds["midgard"]["transferText"][0]))
+                currentWorld = worlds["midgard"]
                 break
 
         elif playerAction.lower() == "save":
@@ -177,8 +175,9 @@ while True:
             print("You kinda just sit there for a while and")
             print("contemplate why you're still alive after")
             print("thinking something so incredibly stupid")
-            time.sleep(2)
             print('\n***************************************************\n')
 
-    while currentWorld.worldName == "Agartha":
-        pass
+
+### Agartha ###
+while currentWorld.worldName == "Agartha":
+    pass
