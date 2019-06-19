@@ -1,39 +1,28 @@
-class world(object):
-    '''"World" Class for subclass worlds
-    Sets Level Gate, Boss Levels, '''
+worlds = {
+    "midgard": {
+        "worldName": "Midgard",
+        "description": "description",
+        "transferText": ["As you step outside of the portal, the ice-crisp air fills your lungs",
+                         "with a clean feeling. The sun tries to take a peak at you through the",
+                         "evergreen trees as nature whispers to you through the fauna",
+                         "and wildlife."],
+        "levelGate": 1,
+        "bossLevel": 5
+    },
+    "eden": {
+        "worldName": "Eden",
+        "description": "description",
+        "transferText": ["transferText"], "levelGate": 0,
+        "bossLevel": 0
+    },
+    "agartha": {
+        "worldName": "Agartha",
+        "description": "description",
+        "transferText": ["transferText"],
+        "levelGate": 6,
+        "bossLevel": 12
+    }
+}
 
-    def __init__(self, levelGate, bossLevel):
-        self.levelGate = levelGate
-        self.bossLevel = bossLevel
-
-
-class Eden(world):
-    '''Safety world.'''
-
-    def __init__(self):
-        super().__init__(0, 0)
-        self.worldName = "Eden"
-
-    transferText = "Put cool world travel text here"
-
-
-class Midgard(world):
-    '''Starting World
-Contains basic enemies and first part of the story arc'''
-
-    def __init__(self):
-        super().__init__(1, 5)
-        self.worldName = "Midgard"
-
-    transferText = "Put cool world travel text here"
-
-
-class Agartha(world):
-    '''Underground world based off of the "Hollow Earth"
-theory'''
-
-    def __init__(self):
-        super().__init__(6, 12)
-        self.worldName = "Agartha"
-
-    transferText = "Put cool world travel text here"
+if __name__ == "__main__":
+    print(worlds)
